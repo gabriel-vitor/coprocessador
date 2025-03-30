@@ -1,0 +1,65 @@
+module coprocessador #(parameter N=3, WIDTH=8)(
+    input [2:0] operacao, // entrada para selecionar a operação
+    input signed [WIDTH-1:0] escalar,
+    input signed [WIDTH-1:0] A [0:N-1][0:N-1],
+    input signed [WIDTH-1:0] B [0:N-1][0:N-1],
+    output reg signed [(2*WIDTH)+2:0] resultado [0:N-1][0:N-1],
+    output reg signed [(3*WIDTH):0] det // saída específica para determinante
+);
+
+wire signed [WIDTH:0] adicao [0:N-1][0:N-1];
+wire signed [WIDTH:0] subtracao [0:N-1][0:N-1];
+wire signed [(2*WIDTH)+2:0] multiplicacao [0:N-1][0:N-1];
+wire signed [(2*WIDTH)-1:0] mult_escalar [0:N-1][0:N-1];
+wire signed [WIDTH-1:0] transposta [0:N-1][0:N-1];
+wire signed [WIDTH:0] oposta [0:N-1][0:N-1];
+wire signed [(3*WIDTH):0] determinante;
+
+// Instância dos módulos
+matriz_adicao #(N, WIDTH) ADD (.A(A), .B(B), .Resultado(adicao));
+matriz_subtracao #(N, WIDTH) SUB (.A(A), .B(B), .Resultado(subtracao));
+matriz_multiplicacao #(N, WIDTH) MULT (.A(A), .B(B), .Resultado(multiplicacao));
+matriz_mult_escalar #(N, WIDTH) MULT_ESC (.A(A), .escalar(escalar), .Resultado(mult_escalar));
+matriz_transposta #(N, WIDTH) TRANS (.A(A), .Resultado(transposta));
+matriz_oposta #(N, WIDTH) OPOSTA (.A(A), .Resultado(oposta));
+matriz_determinante #(WIDTH) DET (.A(A), .det(determinante));
+
+// Lógica de seleção da operação
+always @(*) begin
+    case(operacao)
+        3'd0: begin // Adição
+            resultado = adicao;
+            det = 0;
+        end
+        3'd1: begin // Subtração
+            resultado = subtracao;
+            det = 0;
+        end
+        3'd2: begin // Multiplicação
+            resultado = multiplicacao;
+            det = 0;
+        end
+        3'd3: begin // Multiplicação Escalar
+            resultado = mult_escalar;
+            det = 0;
+        end
+        3'd4: begin // Transposição
+            resultado = transposta;
+            det = 0;
+        end
+        3'd5: begin // Matriz Oposta
+            resultado = oposta;
+            det = 0;
+        end
+        3'd6: begin // Determinante (resultado não é matriz)
+            det = determinante;
+            resultado = '{default:0};
+        end
+        default: begin
+            resultado = '{default:0};
+            det = 0;
+        end
+    endcase
+end
+
+endmodule

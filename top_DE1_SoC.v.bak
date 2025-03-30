@@ -1,0 +1,71 @@
+module top_DE1_SoC(
+    input CLOCK_50,
+    input [2:0] SW,            // Chaves para selecionar a operação
+    output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
+);
+
+// Parâmetros básicos
+parameter N = 3;
+parameter WIDTH = 8;
+
+// Matrizes de entrada (dados fixos para teste)
+wire signed [WIDTH-1:0] A [0:N-1][0:N-1];
+wire signed [WIDTH-1:0] B [0:N-1][0:N-1];
+wire signed [WIDTH-1:0] escalar;
+
+// Saída do coprocessador
+wire signed [(2*WIDTH)+2:0] resultado [0:N-1][0:N-1];
+wire signed [(3*WIDTH):0] det;
+
+// Dados fixos (Instância matriz_dados.v)
+matriz_dados DADOS(.matriz_A(A), .matriz_B(B), .escalar(escalar));
+
+// Coprocessador instanciado com todas operações
+coprocessador #(.N(N), .WIDTH(WIDTH)) COPROC (
+    .operacao(SW),
+    .escalar(escalar),
+    .A(A),
+    .B(B),
+    .resultado(resultado),
+    .det(det)
+);
+
+// Exibição no HEX (simplificada para demonstração)
+// Exibirá o valor absoluto do determinante (operação 6) ou o primeiro elemento da matriz resultado
+wire [23:0] valor_display;
+assign valor_display = (SW == 3'd6) ? det[23:0] : resultado[0][0][23:0];
+
+// Conversão dos valores para display HEX
+display_7seg DISP0(valor_display[3:0], HEX0);
+display_7seg DISP1(valor_display[7:4], HEX1);
+display_7seg DISP2(valor_display[11:8], HEX2);
+display_7seg DISP3(valor_display[15:12], HEX3);
+display_7seg DISP4(valor_display[19:16], HEX4);
+display_7seg DISP5(valor_display[23:20], HEX5);
+
+endmodule
+
+//-------------------------------------------
+// Módulo para exibição em display de 7 segmentos
+module display_7seg(input [3:0] valor, output reg [6:0] hex);
+always @(*)
+    case(valor)
+        4'h0: hex = 7'b1000000;
+        4'h1: hex = 7'b1111001;
+        4'h2: hex = 7'b0100100;
+        4'h3: hex = 7'b0110000;
+        4'h4: hex = 7'b0011001;
+        4'h5: hex = 7'b0010010;
+        4'h6: hex = 7'b0000010;
+        4'h7: hex = 7'b1111000;
+        4'h8: hex = 7'b0000000;
+        4'h9: hex = 7'b0010000;
+        4'hA: hex = 7'b0001000;
+        4'hB: hex = 7'b0000011;
+        4'hC: hex = 7'b1000110;
+        4'hD: hex = 7'b0100001;
+        4'hE: hex = 7'b0000110;
+        4'hF: hex = 7'b0001110;
+        default: hex = 7'b1111111;
+    endcase
+endmodule
