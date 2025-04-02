@@ -1,6 +1,6 @@
 Analysis & Synthesis report for pbl1
-Sat Mar 29 23:46:46 2025
-Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Wed Apr  2 16:13:31 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
 ---------------------
@@ -29,51 +29,50 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  21. Post-Synthesis Netlist Statistics for Top Partition
  22. Elapsed Time Per Partition
  23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Mar 29 23:46:46 2025           ;
-; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
-; Revision Name                   ; pbl1                                            ;
-; Top-level Entity Name           ; top_DE1_SoC                                     ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 46                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 11                                              ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Apr  2 16:13:31 2025          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; pbl1                                           ;
+; Top-level Entity Name           ; top_DE1_SoC                                    ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 0                                              ;
+; Total pins                      ; 46                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 11                                             ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -168,8 +167,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -179,21 +178,21 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                           ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
-; matriz_adicao.v                  ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_adicao.v        ;         ;
-; matriz_subtracao.v               ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_subtracao.v     ;         ;
-; matriz_multiplicacao.v           ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_multiplicacao.v ;         ;
-; matriz_mult_escalar.v            ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_mult_escalar.v  ;         ;
-; matriz_transposta.v              ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_transposta.v    ;         ;
-; matriz_oposta.v                  ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_oposta.v        ;         ;
-; matriz_determinante.v            ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_determinante.v  ;         ;
-; coprocessador.v                  ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v        ;         ;
-; top_DE1_SoC.v                    ; yes             ; User Verilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v          ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
+; matriz_adicao.v                  ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_adicao.v        ;         ;
+; matriz_subtracao.v               ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_subtracao.v     ;         ;
+; matriz_multiplicacao.v           ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_multiplicacao.v ;         ;
+; matriz_mult_escalar.v            ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_mult_escalar.v  ;         ;
+; matriz_transposta.v              ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_transposta.v    ;         ;
+; matriz_oposta.v                  ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_oposta.v        ;         ;
+; matriz_determinante.v            ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_determinante.v  ;         ;
+; coprocessador.v                  ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v        ;         ;
+; top_DE1_SoC.v                    ; yes             ; User Verilog HDL File  ; /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v          ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -273,13 +272,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 6:1                ; 22 bits   ; 88 LEs        ; 66 LEs               ; 22 LEs                 ; No         ; |top_DE1_SoC|valor_display[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 6:1                ; 22 bits   ; 88 LEs        ; 66 LEs               ; 22 LEs                 ; No         ; |top_DE1_SoC|valor_display[12] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
 +-----------------------------------------------------------------------------+
@@ -473,65 +472,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Sat Mar 29 23:46:40 2025
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Wed Apr  2 16:13:26 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pbl1 -c pbl1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_dados.v
-    Info (12023): Found entity 1: matriz_dados File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_dados.v Line: 2
+    Info (12023): Found entity 1: matriz_dados File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_dados.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_adicao.v
-    Info (12023): Found entity 1: matriz_adicao File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_adicao.v Line: 1
+    Info (12023): Found entity 1: matriz_adicao File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_adicao.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_subtracao.v
-    Info (12023): Found entity 1: matriz_subtracao File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_subtracao.v Line: 1
+    Info (12023): Found entity 1: matriz_subtracao File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_subtracao.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_multiplicacao.v
-    Info (12023): Found entity 1: matriz_multiplicacao File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_multiplicacao.v Line: 1
+    Info (12023): Found entity 1: matriz_multiplicacao File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_multiplicacao.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_mult_escalar.v
-    Info (12023): Found entity 1: matriz_mult_escalar File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_mult_escalar.v Line: 1
+    Info (12023): Found entity 1: matriz_mult_escalar File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_mult_escalar.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_transposta.v
-    Info (12023): Found entity 1: matriz_transposta File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_transposta.v Line: 1
+    Info (12023): Found entity 1: matriz_transposta File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_transposta.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_oposta.v
-    Info (12023): Found entity 1: matriz_oposta File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_oposta.v Line: 1
+    Info (12023): Found entity 1: matriz_oposta File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_oposta.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matriz_determinante.v
-    Info (12023): Found entity 1: matriz_determinante File: C:/workspace/uefs/Sistemas Digitais/coprocessador/matriz_determinante.v Line: 1
+    Info (12023): Found entity 1: matriz_determinante File: /home/aluno/Documentos/tpo4_gll/coprocessador/matriz_determinante.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file coprocessador.v
-    Info (12023): Found entity 1: coprocessador File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 1
-Info (12021): Found 2 design units, including 2 entities, in source file top_de1_soc.v
-    Info (12023): Found entity 1: top_DE1_SoC File: C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v Line: 1
-    Info (12023): Found entity 2: display_7seg File: C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v Line: 57
+    Info (12023): Found entity 1: coprocessador File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file top_DE1_SoC.v
+    Info (12023): Found entity 1: top_DE1_SoC File: /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v Line: 1
+    Info (12023): Found entity 2: display_7seg File: /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v Line: 57
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_matriz.v
-    Info (12023): Found entity 1: testbench_matriz File: C:/workspace/uefs/Sistemas Digitais/coprocessador/testbench_matriz.v Line: 2
+    Info (12023): Found entity 1: testbench_matriz File: /home/aluno/Documentos/tpo4_gll/coprocessador/testbench_matriz.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file rampbl.v
+    Info (12023): Found entity 1: rampbl File: /home/aluno/Documentos/tpo4_gll/coprocessador/rampbl.v Line: 40
 Info (12127): Elaborating entity "top_DE1_SoC" for the top level hierarchy
-Info (12128): Elaborating entity "coprocessador" for hierarchy "coprocessador:COPROC" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v Line: 38
-Info (12128): Elaborating entity "matriz_adicao" for hierarchy "coprocessador:COPROC|matriz_adicao:ADD" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 20
-Info (12128): Elaborating entity "matriz_subtracao" for hierarchy "coprocessador:COPROC|matriz_subtracao:SUB" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 21
-Info (12128): Elaborating entity "matriz_multiplicacao" for hierarchy "coprocessador:COPROC|matriz_multiplicacao:MULT" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 22
-Info (12128): Elaborating entity "matriz_mult_escalar" for hierarchy "coprocessador:COPROC|matriz_mult_escalar:MULT_ESC" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 23
-Info (12128): Elaborating entity "matriz_transposta" for hierarchy "coprocessador:COPROC|matriz_transposta:TRANS" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 24
-Info (12128): Elaborating entity "matriz_oposta" for hierarchy "coprocessador:COPROC|matriz_oposta:OPOSTA" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 25
-Info (12128): Elaborating entity "matriz_determinante" for hierarchy "coprocessador:COPROC|matriz_determinante:DET" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/coprocessador.v Line: 26
-Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:DISP0" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v Line: 47
+Info (12128): Elaborating entity "coprocessador" for hierarchy "coprocessador:COPROC" File: /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v Line: 38
+Info (12128): Elaborating entity "matriz_adicao" for hierarchy "coprocessador:COPROC|matriz_adicao:ADD" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 20
+Info (12128): Elaborating entity "matriz_subtracao" for hierarchy "coprocessador:COPROC|matriz_subtracao:SUB" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 21
+Info (12128): Elaborating entity "matriz_multiplicacao" for hierarchy "coprocessador:COPROC|matriz_multiplicacao:MULT" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 22
+Info (12128): Elaborating entity "matriz_mult_escalar" for hierarchy "coprocessador:COPROC|matriz_mult_escalar:MULT_ESC" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 23
+Info (12128): Elaborating entity "matriz_transposta" for hierarchy "coprocessador:COPROC|matriz_transposta:TRANS" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 24
+Info (12128): Elaborating entity "matriz_oposta" for hierarchy "coprocessador:COPROC|matriz_oposta:OPOSTA" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 25
+Info (12128): Elaborating entity "matriz_determinante" for hierarchy "coprocessador:COPROC|matriz_determinante:DET" File: /home/aluno/Documentos/tpo4_gll/coprocessador/coprocessador.v Line: 26
+Info (12128): Elaborating entity "display_7seg" for hierarchy "display_7seg:DISP0" File: /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v Line: 47
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/workspace/uefs/Sistemas Digitais/coprocessador/output_files/pbl1.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/workspace/uefs/Sistemas Digitais/coprocessador/top_DE1_SoC.v Line: 2
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/aluno/Documentos/tpo4_gll/coprocessador/top_DE1_SoC.v Line: 2
 Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 42 output pins
     Info (21061): Implemented 91 logic cells
     Info (21062): Implemented 11 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4878 megabytes
-    Info: Processing ended: Sat Mar 29 23:46:46 2025
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 480 megabytes
+    Info: Processing ended: Wed Apr  2 16:13:31 2025
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:13
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/workspace/uefs/Sistemas Digitais/coprocessador/output_files/pbl1.map.smsg.
 
 

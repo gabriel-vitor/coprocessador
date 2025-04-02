@@ -5,9 +5,12 @@ parameter N = 3; // exemplo com N=3 (para matriz 4x4, escolher 4. Para matriz 5x
 parameter WIDTH = 8;
 
 // Matriz A
-reg signed [WIDTH-1:0] matriz_A [0:N-1][0:N-1];
+reg signed [WIDTH-1:0] matriz_A [0:24];
 // Matriz B
-reg signed [WIDTH-1:0] matriz_B [0:N-1][0:N-1];
+reg signed [WIDTH-1:0] matriz_B [0:24]; // melhor p multi e soma
+
+//reg signed [199:0] matriz_B; -> forma p mandar info pro fio
+
 // Escalar
 reg signed [WIDTH-1:0] escalar = 2;
 
@@ -22,3 +25,12 @@ initial begin
 end
 
 endmodule
+
+/*
+module rampbl (
+	address,
+	clock,
+	data,
+	wren,
+	q);
+*/
