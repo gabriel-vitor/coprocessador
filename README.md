@@ -65,16 +65,16 @@ Foi feito o download e a instalação da versão Lite do Intel Quartus Prime, qu
 
 <p align="justify">
 	
-**1. Criação do Projeto no Quartus**
+**Criação do Projeto no Quartus:**
 Um novo projeto foi criado no Quartus, com a seleção do dispositivo Cyclone V – 5CSEMA5F31C6, correspondente ao FPGA da DE1-SoC.
 
-**2. Escrita do Código em Verilog**
+**Escrita do Código em Verilog:**
 Todos os módulos do coprocessador foram desenvolvidos em linguagem Verilog. Os arquivos .v foram adicionados ao projeto por meio da interface do Quartus.
 
-**3. Pinagem (Assignment Editor)**
+**Pinagem (Assignment Editor):**
 Os sinais do projeto foram associados aos pinos físicos da placa utilizando o Assignment Editor, conforme o manual de pinagem da DE1-SoC.
 
-**4. Instanciação de Memórias e IPs**
+**Instanciação de Memórias e IPs:**
 Foram utilizados recursos como memórias embutidas (RAMs) e outros componentes internos da FPGA, instanciados diretamente no Quartus.
 </p>
 
@@ -82,13 +82,13 @@ Foram utilizados recursos como memórias embutidas (RAMs) e outros componentes i
 
 <p align="justify">
 	
-**1. Compilação do Projeto**
+**Compilação do Projeto:**
 Após a configuração do projeto, o Quartus compilou os arquivos Verilog e gerou o arquivo bitstream (.sof).
 
-**2. Gravação na FPGA**
+**Gravação na FPGA:**
 Com a placa conectada via USB, o bitstream foi carregado na FPGA através do Programmer e do do Quartus.
 
-**3. Testes na Placa**
+**Testes na Placa:**
 As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switches), botões e LEDs para entrada e visualização dos resultados. Em versões futuras, o processador ARM (HPS) pode ser utilizado para enviar comandos diretamente ao coprocessador por meio de um barramento de controle simples.
 </p>
 
