@@ -58,7 +58,7 @@
 ### Descrição de Instalação
 
 <p align="justify">
-Foi feito o download e a instalação da versão Lite do Intel Quartus Prime, que é gratuita e compatível com o FPGA Cyclone V presente no kit DE1-SoC. Disponível em: <https://www.intel.com/content/www/us/en/products/details/fpga/development-tools/quartus-prime/resource.html>.
+Foi feito o download e a instalação da versão Lite do Intel Quartus Prime, que é gratuita e compatível com o FPGA Cyclone V presente no kit DE1-SoC. Disponível no [Site do Quartus Prime](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/download.html).
 </p>
 
 ### Configuração de Ambiente
