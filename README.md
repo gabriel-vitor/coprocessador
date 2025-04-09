@@ -64,6 +64,7 @@ Foi feito o download e a instalação da versão Lite do Intel Quartus Prime, qu
 ### Configuração de Ambiente
 
 <p align="justify">
+	
 **1. Criação do Projeto no Quartus**
 Um novo projeto foi criado no Quartus, com a seleção do dispositivo Cyclone V – 5CSEMA5F31C6, correspondente ao FPGA da DE1-SoC.
 
@@ -80,6 +81,7 @@ Foram utilizados recursos como memórias embutidas (RAMs) e outros componentes i
 ### Execução
 
 <p align="justify">
+	
 **1. Compilação do Projeto**
 Após a configuração do projeto, o Quartus compilou os arquivos Verilog e gerou o arquivo bitstream (.sof).
 
