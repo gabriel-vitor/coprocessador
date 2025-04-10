@@ -1,5 +1,5 @@
 // Constantes para uso em operações com matrizes
-`define MATRIZ_5x5 (0):(8*25-1)                         // Intervalo de bits para matriz 5x5 (flattened)
+`define MATRIZ_5x5 (0):(8*25-1)                         // Intervalo de bits para matriz 5x5 (flattenada)
 `define indice(coluna, linha) (8 * (linha + 5*coluna))  // Cálculo de índice para acessar elemento da matriz
 
 // Módulo: Subtrator de Matrizes
