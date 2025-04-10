@@ -86,7 +86,10 @@ Foram utilizados recursos como memórias embutidas (RAMs) e outros componentes i
 Após a configuração do projeto, o Quartus compilou os arquivos Verilog e gerou o arquivo bitstream (.sof).
 
 **Gravação na FPGA:**
-Com a placa conectada via USB, o bitstream foi carregado na FPGA através do Programmer e do do Quartus.
+Com a placa conectada via USB, o bitstream foi carregado na FPGA através do Programmer e do Quartus.
+
+**Configuração da memória:**
+Usar a ferramenta In-System Memory Content Editor para inserir os dados das matrizes na RAM 1-Port e visualizar os resultados após as operações.
 
 **Testes na Placa:**
 As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switches), botões e LEDs para entrada e visualização dos resultados. Em versões futuras, o processador ARM (HPS) pode ser utilizado para enviar comandos diretamente ao coprocessador por meio de um barramento de controle simples.
