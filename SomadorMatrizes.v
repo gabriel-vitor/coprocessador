@@ -1,5 +1,5 @@
 // Constantes de uso geral
-`define MATRIZ_5x5 (0):(8*25-1)                       // Define o intervalo da matriz 5x5 (flattened)
+`define MATRIZ_5x5 (0):(8*25-1)                       // Define o intervalo da matriz 5x5 vetorizada unidimensional (flattenada)
 `define indice(coluna, linha) (8 * (linha + 5*coluna)) // Acessa elemento específico da matriz 5x5
 
 // Módulo: Somador de Matrizes
