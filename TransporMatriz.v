@@ -1,6 +1,6 @@
 // Constantes para manipulação de matriz 5x5
 `define MATRIZ_5x5 (0):(8*25-1)                         // Intervalo de bits para matriz 5x5
-`define indice(coluna, linha) (8 * (linha + 5*coluna))  // Acesso a elemento em vetor flatten
+`define indice(coluna, linha) (8 * (linha + 5*coluna))  // Acesso a elemento em vetor flattenado
 
 // Módulo: Transposição de Matriz
 // Transpõe uma matriz 5x5 de inteiros com sinal (8 bits por elemento).
