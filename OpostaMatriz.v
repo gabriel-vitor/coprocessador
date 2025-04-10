@@ -1,5 +1,5 @@
 // Constantes para manipulação de matrizes
-`define MATRIZ_5x5 (0):(8*25-1)                         // Representação flatten de uma matriz 5x5
+`define MATRIZ_5x5 (0):(8*25-1)                         // Representação flattenada de uma matriz 5x5
 `define indice(coluna, linha) (8 * (linha + 5*coluna))  // Índice de elemento no vetor
 
 // Módulo: Oposto de Matriz
