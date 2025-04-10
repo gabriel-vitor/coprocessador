@@ -1,8 +1,8 @@
 
 // Constantes úteis para manipulação de matrizes
-`define MATRIZ_5x5 (0):(8*25-1)                        // Representação flatten de uma matriz 5x5
+`define MATRIZ_5x5 (0):(8*25-1)                        // Representação flattenada de uma matriz 5x5
 `define ELEMENTO_8 7:0                                 // Índice de 8 bits
-`define indice(coluna, linha) (8 * (linha + 5*coluna)) // Cálculo do índice de elemento na matriz flatten
+`define indice(coluna, linha) (8 * (linha + 5*coluna)) // Cálculo do índice de elemento na matriz flattenada
 
 // Módulo: Multiplicador de Matriz por Escalar
 // Realiza multiplicação de cada elemento de uma matriz 5x5 por um valor escalar.
