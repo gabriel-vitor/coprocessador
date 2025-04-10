@@ -93,6 +93,13 @@ Cada operação matricial é encapsulada em um módulo dedicado. A Tabela 1 apre
     <b>Figura 3.</b> Estados da MEF utilizada. <b>Fonte:</b> Os autores.
 </p>
 
+
+### Consumo dos Elementos Lógicos
+<p align="center">
+    <img src="images/Consumo-LE.png" width="600"/>
+    <br/>
+    <b>Figura 3.</b> Estados da MEF utilizada. <b>Fonte:</b> Os autores.
+</p>
 ## Preparação do Ambiente de Desenvolvimento
 
 <p align="justify">
