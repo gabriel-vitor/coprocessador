@@ -38,15 +38,44 @@
 ## Arquitetura do Computador
 
 <p align="justify">
-	 
+	 A arquitetura do computador em questão é composta por uma combinação entre os recursos da FPGA e a interface de entrada e saída oferecida pela placa, como switches, botões e LEDs. 
 </p>
 
 <p align="justify">
+	O coprocessador aritmético proposto foi mapeado exclusivamente na lógica programável da FPGA, utilizando blocos de hardware descritos em Verilog. O projeto não utiliza o processador ARM embutido na DE1-SoC, focando apenas no lado FPGA.
+</p>
+
+<p align="justify">
+	 A comunicação com o mundo externo é realizada por meio dos seguintes periféricos físicos:
 	
+● Switches (SW[2:0]): responsáveis por selecionar a operação aritmética a ser executada.
+● Botão KEY[0]: usado para avanço manual da máquina de estados que controla o fluxo de execução.
+● LEDs vermelhos (LEDR[2:0]): indicam visualmente o estado atual da máquina de controle do sistema.
+● JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
 </p>
 
-<p align="justify">
-	 
+<p align="center">
+	A memória utilizada é uma RAM do tipo 1-Port implementada com o IP Catalog do Quartus. Ela possui 256 posições de 256 bits cada, permitindo armazenar matrizes inteiras em um único endereço, o que otimiza a leitura e escrita de dados. A comunicação entre a FSM e a memória é feita de forma síncrona, utilizando sinais de controle padrão (clock, address, data, wren, etc.).
+</p>
+
+<p align="center">
+O projeto não requer comunicação com outros sistemas nem com o processador ARM embutido, funcionando de forma autônoma. Todas as entradas e saídas são mapeadas diretamente para os pinos físicos da FPGA, respeitando a pinagem da DE1-SoC definida no arquivo .qsf.
+</p>
+
+<p align="center">
+    <img src="images/Codificacao-das-Operacoes.png" width="600"/>
+    <br/>
+    <b>Figura 2.</b> Tabela de codificação das operações matemáticas. <b>Fonte:</b> Os autores.
+</p>
+
+<p align="center">
+Além disso, o projeto implementa uma máquina de estados finitos (MEF), responsável por sequenciar as operações de leitura das matrizes da memória, execução da operação escolhida e gravação do resultado na RAM.
+</p>
+
+<p align="center">
+    <img src="images/Maquina-de-Estados-Finitos-MEF.png" width="600"/>
+    <br/>
+    <b>Figura 3.</b> Estados da MEF utilizada. <b>Fonte:</b> Os autores.
 </p>
 
 ## Preparação do Ambiente de Desenvolvimento
@@ -99,7 +128,7 @@ As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switche
 
 ## Testes de Funcionamento do Sistema e Análise dos Resultados
 
-<p align="justify">Após a implementação, foram realizados testes para verificar a correta operação do coprocessador. A estratégia de teste consistiu na inserção manual dos valores das matrizes diretamente na memória RAM utilizando a ferramenta In-System Memory Content Editor. </p> 
+<p align="justify">Após a implementação, foram realizados testes para verificar a correta operação do coprocessador. A estratégia de teste consistiu na inserção manual dos valores das matrizes diretamente na memória RAM utilizando a ferramenta **In-System Memory Content Editor**. </p> 
 
 As operações testadas incluíram:
 
@@ -113,18 +142,15 @@ As operações testadas incluíram:
 
 > **Observação importante:** A operação de **determinante** foi inicialmente planejada, mas não chegou a ser implementada na versão atual do projeto.
 
-<p align="justify">Durante os testes, as matrizes foram preenchidas com valores inteiros, e as operações foram acionadas através das chaves da placa DE1-SoC. Os resultados foram observados diretamente na memória RAM por meio da ferramenta de visualização integrada no Quartus. Essa abordagem permitiu validar o funcionamento correto dos módulos, garantindo que os cálculos estavam sendo realizados conforme esperado. 
-</p> 
+<p align="justify">Durante os testes, as matrizes foram preenchidas com valores inteiros, e as operações foram acionadas através das chaves da placa DE1-SoC. Os resultados foram observados diretamente na memória RAM por meio da ferramenta de visualização integrada no Quartus. Essa abordagem permitiu validar o funcionamento correto dos módulos, garantindo que os cálculos estavam sendo realizados conforme esperado. </p> 
 
 ### Análise dos Resultados
 
 <p align="justify">O coprocessador demonstrou boa performance na execução das operações matriciais básicas, realizando os cálculos de forma rápida e correta.  
-O uso da ferramenta In-System Memory Content Editor foi fundamental para a escrita e leitura dos dados na memória RAM durante os testes, simplificando o processo de verificação dos resultados. 
-</p> 
+O uso da ferramenta **In-System Memory Content Editor** foi fundamental para a escrita e leitura dos dados na memória RAM durante os testes, simplificando o processo de verificação dos resultados. </p> 
 
 <p align="justify">A comunicação entre os módulos de controle, unidades operacionais e a memória foi realizada de maneira eficiente.  
-Como a operação de <strong>determinante</strong> não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. 
-</p> 
+Como a operação de **determinante** não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. </p> 
 
 ## Conclusão
 <p align="justify"> O desenvolvimento deste projeto proporcionou uma experiência prática essencial para a compreensão da integração entre hardware e software utilizando a placa DE1-SoC. Conseguimos implementar com sucesso as operações básicas entre matrizes, realizando a leitura e escrita na memória RAM 1-Port, o que demonstrou uma comunicação eficiente entre os componentes. O projeto também exigiu a criação de diversos módulos especializados, cada um com funções bem definidas para garantir a organização e a eficiência do coprocessador. Desde o início, priorizamos a modularidade do sistema, visando facilitar futuras expansões e simplificar a manutenção do código. </p> 
