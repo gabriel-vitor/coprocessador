@@ -89,11 +89,36 @@ Após a configuração do projeto, o Quartus compilou os arquivos Verilog e gero
 Com a placa conectada via USB, o bitstream foi carregado na FPGA através do Programmer e do Quartus.
 
 **Configuração da memória:**
-Usar a ferramenta In-System Memory Content Editor para inserir os dados das matrizes na RAM 1-Port e visualizar os resultados após as operações.
+Para inserir os dados das matrizes na memória, foi utilizada a ferramenta In-System Memory Content Editor do Quartus. A memória RAM foi criada utilizando o bloco de IP "RAM 1-PORT", devidamente instanciado no projeto e configurado para armazenamento das matrizes. Por meio do In-System Memory, foi possível escrever e visualizar os conteúdos das matrizes em tempo real durante os testes.
+</p>
 
 **Testes na Placa:**
 As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switches), botões e LEDs para entrada e visualização dos resultados. Em versões futuras, o processador ARM (HPS) pode ser utilizado para enviar comandos diretamente ao coprocessador por meio de um barramento de controle simples.
 </p>
+## 
+
+## Testes de Funcionamento do Sistema e Análise dos Resultados
+
+<p align="justify">Após a implementação, foram realizados testes para verificar a correta operação do coprocessador. A estratégia de teste consistiu na inserção manual dos valores das matrizes diretamente na memória RAM utilizando a ferramenta **In-System Memory Content Editor**. </p> 
+
+As operações testadas incluíram:
+
+- **Adição de matrizes**
+- **Subtração de matrizes**
+- **Multiplicação de matrizes**
+- **Transposição de matriz**
+
+> **Observação importante:** A operação de **determinante** foi inicialmente planejada, mas não chegou a ser implementada na versão atual do projeto.
+
+<p align="justify">Durante os testes, as matrizes foram preenchidas com valores inteiros, e as operações foram acionadas através das chaves da placa DE1-SoC. Os resultados foram observados diretamente na memória RAM por meio da ferramenta de visualização integrada no Quartus. Essa abordagem permitiu validar o funcionamento correto dos módulos, garantindo que os cálculos estavam sendo realizados conforme esperado. </p> 
+
+### Análise dos Resultados
+
+<p align="justify">O coprocessador demonstrou boa performance na execução das operações matriciais básicas, realizando os cálculos de forma rápida e correta.  
+O uso da ferramenta **In-System Memory Content Editor** foi fundamental para a escrita e leitura dos dados na memória RAM durante os testes, simplificando o processo de verificação dos resultados. </p> 
+
+<p align="justify">A comunicação entre os módulos de controle, unidades operacionais e a memória foi realizada de maneira eficiente.  
+Como a operação de **determinante** não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. </p> 
 
 ## Conclusão
 <p align="justify"> O desenvolvimento deste projeto proporcionou uma experiência prática essencial para a compreensão da integração entre hardware e software utilizando a placa DE1-SoC. Conseguimos implementar com sucesso as operações básicas entre matrizes, realizando a leitura e escrita na memória RAM 1-Port, o que demonstrou uma comunicação eficiente entre os componentes. O projeto também exigiu a criação de diversos módulos especializados, cada um com funções bem definidas para garantir a organização e a eficiência do coprocessador. Desde o início, priorizamos a modularidade do sistema, visando facilitar futuras expansões e simplificar a manutenção do código. </p> 
