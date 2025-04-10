@@ -45,13 +45,29 @@
 	O coprocessador aritmético proposto foi mapeado exclusivamente na lógica programável da FPGA, utilizando blocos de hardware descritos em Verilog. O projeto não utiliza o processador ARM embutido na DE1-SoC, focando apenas no lado FPGA.
 </p>
 
-<p align="justify">
-	A comunicação com o mundo externo é realizada por meio dos seguintes periféricos físicos:
-	Switches (SW[2:0]): responsáveis por selecionar a operação aritmética a ser executada.
-	Botão KEY[0]: usado para avanço manual da máquina de estados que controla o fluxo de execução.
-	LEDs vermelhos (LEDR[2:0]): indicam visualmente o estado atual da máquina de controle do sistema.
-	JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
-</p>
+
+A comunicação com o mundo externo é realizada por meio dos seguintes periféricos físicos:
+- Switches (SW[2:0]): responsáveis por selecionar a operação aritmética a ser executada.
+- Botão KEY[0]: usado para avanço manual da máquina de estados que controla o fluxo de execução.
+- LEDs vermelhos (LEDR[2:0]): indicam visualmente o estado atual da máquina de controle do sistema.
+- JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
+
+
+Cada operação matricial é encapsulada em um módulo dedicado. A Tabela 1 apresenta os nomes dos arquivos que compõem essas operações, bem como a funcionalidade de cadamódulo e os demais arquivos:
+| Nome do arquivo               | Módulo                  | Função                                                                 |
+|------------------------------|-------------------------|------------------------------------------------------------------------|
+| debounce.v                   | Debounce                | Elimina bouncing de botões mecânicos usando divisão de clock           |
+| SomadorMatrizes.v            | SomadorMatrizes         | Soma elemento a elemento entre duas matrizes (2x2, 3x3, 4x4 ou 5x5)                  |
+| SubtratorMatrizes.v          | SubtratorMatrizes       | Subtrai duas matrizes 5x5 elemento a elemento                          |
+| MultiplicadorEscalar.v       | MultiplicadorEscalar    | Multiplica cada elemento da matriz por um escalar                      |
+| MultiplicadorMatrizes.v      | MultiplicadorMatrizes   | Realiza a multiplicação matricial clássica entre duas matrizes (2x2, 3x3, 4x4 ou 5x5)     |
+| TransportMatriz.v            | TransportMatriz         | Calcula a transposta de uma matriz (2x2, 3x3, 4x4 ou 5x5)                                 |
+| OpostaMatriz.v               | OpostoMatriz            | Gera a matriz oposta (nega todos os elementos da matriz)               |
+| UnidadeOperacoesMatriz.v     | UnidadeOperacoesMatriz  | Multiplexa e executa a operação escolhida via chave (SW[2:0])          |
+| MainTopLevel.v               | MainTopLevel            | Módulo top-level: controla FSM, RAM, entrada/saída e fluxo do sistema  |
+
+<p align="center"><b>Tabela 1.</b> Descrição dos módulos e suas respectivas funções no projeto. Fonte: Os autores.</p>
+
 
 <p align="justify">
 	A memória utilizada é uma RAM do tipo 1-Port implementada com o IP Catalog do Quartus. Ela possui 256 posições de 256 bits cada, permitindo armazenar matrizes inteiras em um único endereço, o que otimiza a leitura e escrita de dados. A comunicação entre a FSM e a memória é feita de forma síncrona, utilizando sinais de controle padrão (clock, address, data, wren, etc.).
@@ -126,7 +142,7 @@ As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switche
 
 ## Testes de Funcionamento do Sistema e Análise dos Resultados
 
-<p align="justify">Após a implementação, foram realizados testes para verificar a correta operação do coprocessador. A estratégia de teste consistiu na inserção manual dos valores das matrizes diretamente na memória RAM utilizando a ferramenta **In-System Memory Content Editor**. </p> 
+<p align="justify">Após a implementação, foram realizados testes para verificar a correta operação do coprocessador. A estratégia de teste consistiu na inserção manual dos valores das matrizes diretamente na memória RAM utilizando a ferramenta In-System Memory Content Editor. </p> 
 
 As operações testadas incluíram:
 
@@ -145,10 +161,10 @@ As operações testadas incluíram:
 ### Análise dos Resultados
 
 <p align="justify">O coprocessador demonstrou boa performance na execução das operações matriciais básicas, realizando os cálculos de forma rápida e correta.  
-O uso da ferramenta **In-System Memory Content Editor** foi fundamental para a escrita e leitura dos dados na memória RAM durante os testes, simplificando o processo de verificação dos resultados. </p> 
+O uso da ferramenta In-System Memory Content Editor foi fundamental para a escrita e leitura dos dados na memória RAM durante os testes, simplificando o processo de verificação dos resultados. </p> 
 
 <p align="justify">A comunicação entre os módulos de controle, unidades operacionais e a memória foi realizada de maneira eficiente.  
-Como a operação de **determinante** não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. </p> 
+Como a operação de <strong>determinante</strong> não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. </p> 
 
 ## Conclusão
 <p align="justify"> O desenvolvimento deste projeto proporcionou uma experiência prática essencial para a compreensão da integração entre hardware e software utilizando a placa DE1-SoC. Conseguimos implementar com sucesso as operações básicas entre matrizes, realizando a leitura e escrita na memória RAM 1-Port, o que demonstrou uma comunicação eficiente entre os componentes. O projeto também exigiu a criação de diversos módulos especializados, cada um com funções bem definidas para garantir a organização e a eficiência do coprocessador. Desde o início, priorizamos a modularidade do sistema, visando facilitar futuras expansões e simplificar a manutenção do código. </p> 
