@@ -8,8 +8,8 @@
 // Multiplica duas matrizes 5x5 (com sinais de 8 bits) e acumula linha a linha
 // a cada pulso de clock. Cada elemento do resultado é armazenado após somas.
 module MultiplicadorMatrizes (
-    input      signed [`MATRIZ_5x5] matriz_a,      // Matriz A de entrada (flattened)
-    input      signed [`MATRIZ_5x5] matriz_b,      // Matriz B de entrada (flattened)
+    input      signed [`MATRIZ_5x5] matriz_a,      // Matriz A de entrada (flattenada)
+    input      signed [`MATRIZ_5x5] matriz_b,      // Matriz B de entrada (flattenada)
     input             [7:0] tamanho,               // Tamanho da matriz (não utilizado diretamente)
     input                    clk,                  // Clock do sistema
 
