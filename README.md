@@ -53,11 +53,11 @@
 	JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
 </p>
 
-<p align="center">
+<p align="justify">
 	A memória utilizada é uma RAM do tipo 1-Port implementada com o IP Catalog do Quartus. Ela possui 256 posições de 256 bits cada, permitindo armazenar matrizes inteiras em um único endereço, o que otimiza a leitura e escrita de dados. A comunicação entre a FSM e a memória é feita de forma síncrona, utilizando sinais de controle padrão (clock, address, data, wren, etc.).
 </p>
 
-<p align="center">
+<p align="justify">
 	O projeto não requer comunicação com outros sistemas nem com o processador ARM embutido, funcionando de forma autônoma. Todas as entradas e saídas são mapeadas diretamente para os pinos físicos da FPGA, respeitando a pinagem da DE1-SoC definida no arquivo .qsf.
 </p>
 
@@ -67,7 +67,7 @@
     <b>Figura 2.</b> Tabela de codificação das operações matemáticas. <b>Fonte:</b> Os autores.
 </p>
 
-<p align="center">
+<p align="justify">
 	Além disso, o projeto implementa uma máquina de estados finitos (MEF), responsável por sequenciar as operações de leitura das matrizes da memória, execução da operação escolhida e gravação do resultado na RAM.
 </p>
 
