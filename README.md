@@ -123,7 +123,7 @@ O uso da ferramenta In-System Memory Content Editor foi fundamental para a escri
 </p> 
 
 <p align="justify">A comunicação entre os módulos de controle, unidades operacionais e a memória foi realizada de maneira eficiente.  
-Como a operação de <strong>determinante</strong>determinante não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. 
+Como a operação de <strong>determinante</strong> não foi finalizada, algumas funcionalidades planejadas para análise de matrizes ficaram de fora nesta etapa, mas as operações concluídas comprovam a viabilidade e estabilidade do sistema desenvolvido. 
 </p> 
 
 ## Conclusão
