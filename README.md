@@ -93,13 +93,8 @@ As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switche
 </p>
 
 ## Conclusão
-
-<p align="justify">
-	
-</p>
-
-<p align="justify">
-	
-</p>
-
+<p align="justify"> O desenvolvimento deste projeto proporcionou uma experiência prática essencial para a compreensão da integração entre hardware e software utilizando a placa DE1-SoC. Conseguimos implementar com sucesso as operações básicas entre matrizes, realizando a leitura e escrita na memória RAM 1-Port, o que demonstrou uma comunicação eficiente entre os componentes. O projeto também exigiu a criação de diversos módulos especializados, cada um com funções bem definidas para garantir a organização e a eficiência do coprocessador. Desde o início, priorizamos a modularidade do sistema, visando facilitar futuras expansões e simplificar a manutenção do código. </p> 
+<p align="justify"> Durante o desenvolvimento, enfrentamos algumas dificuldades, principalmente relacionadas à comunicação com a FPGA e à depuração dos módulos de memória e controle. No entanto, essas barreiras contribuíram significativamente para o nosso aprendizado, impulsionando-nos a buscar soluções criativas e a explorar mais profundamente a documentação e os recursos disponíveis da plataforma. </p> 
+<p align="justify"> Os módulos desenvolvidos demonstraram-se funcionais e bem estruturados. Embora o projeto tenha contemplado as operações básicas, como adição, subtração, multiplicação entre matrizes, multiplicação por escalar, matriz oposta e transposição, não foi possível implementar o cálculo do determinante devido à sua complexidade adicional e às limitações de tempo. </p> 
+<p align="justify"> Como próximos passos, pretendemos aprimorar a eficiência de algumas operações, incluir a implementação do cálculo do determinante e explorar a possibilidade de paralelismo mais avançado. Além disso, buscamos expandir as capacidades do coprocessador para suportar operações matemáticas ainda mais complexas. </p>
 
