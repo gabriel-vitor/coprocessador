@@ -1,0 +1,763 @@
+Analysis & Synthesis report for pbl1
+Wed Apr  9 21:41:28 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|altsyncram_k1e2:altsyncram1
+ 16. Parameter Settings for User Entity Instance: ram:memory|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod"
+ 19. Port Connectivity Checks: "ram:memory"
+ 20. In-System Memory Content Editor Settings
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Apr  9 21:41:28 2025          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; pbl1                                           ;
+; Top-level Entity Name           ; MainTopLevel                                   ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 1422                                           ;
+; Total pins                      ; 8                                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 65,536                                         ;
+; Total DSP Blocks                ; 45                                             ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; MainTopLevel       ; pbl1               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processors 6-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                 ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                       ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------+
+; debounce.v                                                         ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v                                                         ;             ;
+; SomadorMatrizes.v                                                  ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SomadorMatrizes.v                                                  ;             ;
+; SubtratorMatrizes.v                                                ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SubtratorMatrizes.v                                                ;             ;
+; MultiplicadorMatrizes.v                                            ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorMatrizes.v                                            ;             ;
+; MultiplicadorEscalar.v                                             ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorEscalar.v                                             ;             ;
+; TransporMatriz.v                                                   ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/TransporMatriz.v                                                   ;             ;
+; OpostaMatriz.v                                                     ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/OpostaMatriz.v                                                     ;             ;
+; UnidadeOperacoesMatriz.v                                           ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v                                           ;             ;
+; MainTopLevel.v                                                     ; yes             ; User Verilog HDL File                        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v                                                     ;             ;
+; ram.v                                                              ; yes             ; User Wizard-Generated File                   ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/ram.v                                                              ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                           ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                    ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                              ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                           ;             ;
+; aglobal231.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                           ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                            ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                               ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                               ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                             ;             ;
+; db/altsyncram_1pn1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf                                             ;             ;
+; db/altsyncram_k1e2.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_k1e2.tdf                                             ;             ;
+; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                                      ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                            ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                        ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                           ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_hub.vhd                                                              ; altera_sld  ;
+; db/ip/sldd144d38a/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                         ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 1400        ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 1747        ;
+;     -- 7 input functions                    ; 202         ;
+;     -- 6 input functions                    ; 524         ;
+;     -- 5 input functions                    ; 446         ;
+;     -- 4 input functions                    ; 246         ;
+;     -- <=3 input functions                  ; 329         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 1422        ;
+;                                             ;             ;
+; I/O pins                                    ; 8           ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 65536       ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 45          ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 692         ;
+; Total fan-out                               ; 18884       ;
+; Average fan-out                             ; 5.40        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                      ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |MainTopLevel                                                                                                                           ; 1747 (12)           ; 1422 (607)                ; 65536             ; 45         ; 8    ; 0            ; |MainTopLevel                                                                                                                                                                                                                                                                                                                                            ; MainTopLevel                      ; work         ;
+;    |UnidadeOperacoesMatriz:unidade_operacoes|                                                                                           ; 1552 (203)          ; 408 (200)                 ; 0                 ; 45         ; 0    ; 0            ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes                                                                                                                                                                                                                                                                                                   ; UnidadeOperacoesMatriz            ; work         ;
+;       |MultiplicadorEscalar:escalar_mod|                                                                                                ; 0 (0)               ; 0 (0)                     ; 0                 ; 25         ; 0    ; 0            ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorEscalar:escalar_mod                                                                                                                                                                                                                                                                  ; MultiplicadorEscalar              ; work         ;
+;       |MultiplicadorMatrizes:mult_mod|                                                                                                  ; 1124 (1124)         ; 208 (208)                 ; 0                 ; 20         ; 0    ; 0            ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod                                                                                                                                                                                                                                                                    ; MultiplicadorMatrizes             ; work         ;
+;       |SubtratorMatrizes:sub_mod|                                                                                                       ; 225 (225)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|SubtratorMatrizes:sub_mod                                                                                                                                                                                                                                                                         ; SubtratorMatrizes                 ; work         ;
+;    |debounce:debouncer|                                                                                                                 ; 40 (1)              ; 31 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|debounce:debouncer                                                                                                                                                                                                                                                                                                                         ; debounce                          ; work         ;
+;       |DivisorClock:divisor|                                                                                                            ; 39 (39)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|debounce:debouncer|DivisorClock:divisor                                                                                                                                                                                                                                                                                                    ; DivisorClock                      ; work         ;
+;       |FlipFlopEstavel:ff0|                                                                                                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|debounce:debouncer|FlipFlopEstavel:ff0                                                                                                                                                                                                                                                                                                     ; FlipFlopEstavel                   ; work         ;
+;       |FlipFlopEstavel:ff1|                                                                                                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|debounce:debouncer|FlipFlopEstavel:ff1                                                                                                                                                                                                                                                                                                     ; FlipFlopEstavel                   ; work         ;
+;       |FlipFlopEstavel:ff2|                                                                                                             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|debounce:debouncer|FlipFlopEstavel:ff2                                                                                                                                                                                                                                                                                                     ; FlipFlopEstavel                   ; work         ;
+;    |ram:memory|                                                                                                                         ; 45 (0)              ; 290 (0)                   ; 65536             ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory                                                                                                                                                                                                                                                                                                                                 ; ram                               ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 45 (0)              ; 290 (0)                   ; 65536             ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                                 ; altsyncram                        ; work         ;
+;          |altsyncram_1pn1:auto_generated|                                                                                               ; 45 (0)              ; 290 (0)                   ; 65536             ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated                                                                                                                                                                                                                                                                  ; altsyncram_1pn1                   ; work         ;
+;             |altsyncram_k1e2:altsyncram1|                                                                                               ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|altsyncram_k1e2:altsyncram1                                                                                                                                                                                                                                      ; altsyncram_k1e2                   ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                                                                                                 ; 45 (33)             ; 290 (282)                 ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                                        ; sld_mod_ram_rom                   ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|                                                                  ; 12 (12)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr                                                                                                                                                                                  ; sld_rom_sr                        ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 98 (1)              ; 86 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 97 (0)              ; 86 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 97 (0)              ; 86 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 97 (1)              ; 86 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 96 (0)              ; 81 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 96 (63)             ; 81 (53)                   ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 19 (19)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                             ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+; ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|altsyncram_k1e2:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 256          ; 256          ; 256          ; 65536 ; None ;
++------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 9x9                 ; 25          ;
+; Independent 18x18 plus 36       ; 15          ;
+; Sum of two 18x18                ; 5           ;
+; Total number of DSP blocks      ; 45          ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 50          ;
++---------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                               ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                   ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
+; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |MainTopLevel|ram:memory                                                                                                                                                                                                                                                          ; ram.v           ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; estado[3..7]                          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1422  ;
+; Number of registers using Synchronous Clear  ; 251   ;
+; Number of registers using Synchronous Load   ; 265   ;
+; Number of registers using Asynchronous Clear ; 59    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1124  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 256 bits  ; 512 LEs       ; 0 LEs                ; 512 LEs                ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[118]                                                                                                                                                                                                                                ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[5]                                                                                                                                                                                                                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                                                                                                                                                                                                  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |MainTopLevel|endereco_mem[0]                                                                                                                                                                                                                                                                                                                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|word_counter[1]                                                                                                                                                                                ;
+; 8:1                ; 25 bits   ; 125 LEs       ; 50 LEs               ; 75 LEs                 ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|resultado[111]                                                                                                                                                                                                                                                                                                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|WORD_SR[2]                                                                                                                                                                                     ;
+; 6:1                ; 175 bits  ; 700 LEs       ; 350 LEs              ; 350 LEs                ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|resultado[27]                                                                                                                                                                                                                                                                                                   ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |MainTopLevel|ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr|WORD_SR[1]                                                                                                                                                                                     ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[13]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[21]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[24]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[32]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[42]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[49]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[57]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[67]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[74]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[82]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[90]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[96]                                                                                                                                                                                                                                                                ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[109]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[114]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[125]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[130]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[136]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[144]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[153]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[165]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[171]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[179]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[184]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[198]                                                                                                                                                                                                                                                               ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|matriz_result[6]                                                                                                                                                                                                                                                                 ;
+; 4:1                ; 48 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux34                                                                                                                                                                                                                                                                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|SubtratorMatrizes:sub_mod|Add23                                                                                                                                                                                                                                                                                 ;
+; 3:1                ; 200 bits  ; 400 LEs       ; 400 LEs              ; 0 LEs                  ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|SubtratorMatrizes:sub_mod|Add13                                                                                                                                                                                                                                                                                 ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux1                                                                                                                                                                                                                                                                             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux35                                                                                                                                                                                                                                                                            ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 144 LEs              ; 24 LEs                 ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux9                                                                                                                                                                                                                                                                             ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 144 LEs              ; 24 LEs                 ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux25                                                                                                                                                                                                                                                                            ;
+; 28:1               ; 8 bits    ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; No         ; |MainTopLevel|UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod|Mux18                                                                                                                                                                                                                                                                            ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[2]                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[0]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[1]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[2]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[2]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |MainTopLevel|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|altsyncram_k1e2:altsyncram1 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                             ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                              ;
++---------------------------------+--------------------+------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:memory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                     ;
+; WIDTH_A                            ; 256                  ; Signed Integer              ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer              ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer              ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 1                    ; Untyped                     ;
+; WIDTHAD_B                          ; 1                    ; Untyped                     ;
+; NUMWORDS_B                         ; 1                    ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; UNUSED               ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_1pn1      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                       ;
++-------------------------------------------+--------------------------------------------+
+; Name                                      ; Value                                      ;
++-------------------------------------------+--------------------------------------------+
+; Number of entity instances                ; 1                                          ;
+; Entity Instance                           ; ram:memory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                ;
+;     -- WIDTH_A                            ; 256                                        ;
+;     -- NUMWORDS_A                         ; 256                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                     ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 1                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
++-------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod"                                                                          ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; tamanho ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "tamanho[7..1]" will be connected to GND. ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ram:memory"                                                                                                                                             ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                              ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "address[7..3]" will be connected to GND.      ;
+; data    ; Input  ; Warning  ; Input port expression (200 bits) is smaller than the input port (256 bits) it drives.  Extra input bit(s) "data[255..200]" will be connected to GND. ;
+; q       ; Output ; Warning  ; Output or bidir port (256 bits) is wider than the port expression (200 bits) it drives; bit(s) "q[255..200]" have no fanouts                         ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                              ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                        ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+; 0              ; NONE        ; 256   ; 256   ; Read/Write ; ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated ;
++----------------+-------------+-------+-------+------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1336                        ;
+;     CLR               ; 2                           ;
+;     ENA               ; 786                         ;
+;     ENA CLR           ; 7                           ;
+;     ENA CLR SCLR      ; 9                           ;
+;     ENA CLR SLD       ; 8                           ;
+;     ENA SLD           ; 256                         ;
+;     SCLR              ; 235                         ;
+;     plain             ; 33                          ;
+; arriav_lcell_comb     ; 1649                        ;
+;     arith             ; 327                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 95                          ;
+;         2 data inputs ; 31                          ;
+;         4 data inputs ; 200                         ;
+;     extend            ; 201                         ;
+;         7 data inputs ; 201                         ;
+;     normal            ; 1121                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 63                          ;
+;         4 data inputs ; 32                          ;
+;         5 data inputs ; 426                         ;
+;         6 data inputs ; 508                         ;
+; arriav_mac            ; 45                          ;
+; boundary_port         ; 35                          ;
+; stratixv_ram_block    ; 256                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.80                        ;
+; Average LUT depth     ; 2.69                        ;
++-----------------------+-----------------------------+
+
+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
++-----------------------+------------------------------------------+
+; Type                  ; Count                                    ;
++-----------------------+------------------------------------------+
+; arriav_ff             ; 86                                       ;
+;     CLR               ; 5                                        ;
+;     ENA               ; 30                                       ;
+;     ENA CLR           ; 27                                       ;
+;     ENA CLR SLD       ; 1                                        ;
+;     SCLR              ; 7                                        ;
+;     plain             ; 16                                       ;
+; arriav_lcell_comb     ; 98                                       ;
+;     extend            ; 1                                        ;
+;         7 data inputs ; 1                                        ;
+;     normal            ; 97                                       ;
+;         0 data inputs ; 1                                        ;
+;         1 data inputs ; 4                                        ;
+;         2 data inputs ; 21                                       ;
+;         3 data inputs ; 21                                       ;
+;         4 data inputs ; 14                                       ;
+;         5 data inputs ; 20                                       ;
+;         6 data inputs ; 16                                       ;
+; boundary_port         ; 103                                      ;
+;                       ;                                          ;
+; Max LUT depth         ; 3.00                                     ;
+; Average LUT depth     ; 1.41                                     ;
++-----------------------+------------------------------------------+
+
+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:06     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Wed Apr  9 21:40:48 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pbl1 -c pbl1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file debounce.v
+    Info (12023): Found entity 1: debounce File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 4
+    Info (12023): Found entity 2: DivisorClock File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 31
+    Info (12023): Found entity 3: FlipFlopEstavel File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file somadormatrizes.v
+    Info (12023): Found entity 1: SomadorMatrizes File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SomadorMatrizes.v Line: 7
+Warning (10274): Verilog HDL macro warning at SubtratorMatrizes.v(3): overriding existing definition for macro "MATRIZ_5x5", which was defined in "SomadorMatrizes.v", line 3 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SubtratorMatrizes.v Line: 3
+Warning (10274): Verilog HDL macro warning at SubtratorMatrizes.v(4): overriding existing definition for macro "indice", which was defined in "SomadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SubtratorMatrizes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file subtratormatrizes.v
+    Info (12023): Found entity 1: SubtratorMatrizes File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/SubtratorMatrizes.v Line: 7
+Warning (10274): Verilog HDL macro warning at MultiplicadorMatrizes.v(5): overriding existing definition for macro "MATRIZ_5x5", which was defined in "SomadorMatrizes.v", line 3 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorMatrizes.v Line: 5
+Warning (10274): Verilog HDL macro warning at MultiplicadorMatrizes.v(6): overriding existing definition for macro "indice", which was defined in "SomadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorMatrizes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicadormatrizes.v
+    Info (12023): Found entity 1: MultiplicadorMatrizes File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorMatrizes.v Line: 10
+Warning (10274): Verilog HDL macro warning at MultiplicadorEscalar.v(4): overriding existing definition for macro "MATRIZ_5x5", which was defined in "SomadorMatrizes.v", line 3 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorEscalar.v Line: 4
+Warning (10274): Verilog HDL macro warning at MultiplicadorEscalar.v(5): overriding existing definition for macro "ELEMENTO_8", which was defined in "MultiplicadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorEscalar.v Line: 5
+Warning (10274): Verilog HDL macro warning at MultiplicadorEscalar.v(6): overriding existing definition for macro "indice", which was defined in "SomadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorEscalar.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicadorescalar.v
+    Info (12023): Found entity 1: MultiplicadorEscalar File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorEscalar.v Line: 9
+Warning (10274): Verilog HDL macro warning at TransporMatriz.v(3): overriding existing definition for macro "MATRIZ_5x5", which was defined in "SomadorMatrizes.v", line 3 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/TransporMatriz.v Line: 3
+Warning (10274): Verilog HDL macro warning at TransporMatriz.v(4): overriding existing definition for macro "indice", which was defined in "SomadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/TransporMatriz.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file transpormatriz.v
+    Info (12023): Found entity 1: TransporMatriz File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/TransporMatriz.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file opostamatriz.v
+    Info (12023): Found entity 1: OpostaMatriz File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/OpostaMatriz.v Line: 7
+Warning (10274): Verilog HDL macro warning at UnidadeOperacoesMatriz.v(3): overriding existing definition for macro "MATRIZ_5x5", which was defined in "SomadorMatrizes.v", line 3 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 3
+Warning (10274): Verilog HDL macro warning at UnidadeOperacoesMatriz.v(4): overriding existing definition for macro "ELEMENTO_8", which was defined in "MultiplicadorMatrizes.v", line 4 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file unidadeoperacoesmatriz.v
+    Info (12023): Found entity 1: UnidadeOperacoesMatriz File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file maintoplevel.v
+    Info (12023): Found entity 1: MainTopLevel File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/ram.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at UnidadeOperacoesMatriz.v(25): created implicit net for "tamanho" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 25
+Info (12127): Elaborating entity "MainTopLevel" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(57): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 57
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(62): truncated value with size 32 to match size of target (3) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 62
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(63): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 63
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(68): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 68
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(73): truncated value with size 32 to match size of target (3) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 73
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(74): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 74
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(78): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 78
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(83): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 83
+Warning (10230): Verilog HDL assignment warning at MainTopLevel.v(88): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 88
+Info (12128): Elaborating entity "ram" for hierarchy "ram:memory" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 32
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ram:memory|altsyncram:altsyncram_component" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/ram.v Line: 86
+Info (12130): Elaborated megafunction instantiation "ram:memory|altsyncram:altsyncram_component" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/ram.v Line: 86
+Info (12133): Instantiated megafunction "ram:memory|altsyncram:altsyncram_component" with the following parameter: File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/ram.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=NONE"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "256"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1pn1.tdf
+    Info (12023): Found entity 1: altsyncram_1pn1 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_1pn1" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k1e2.tdf
+    Info (12023): Found entity 1: altsyncram_k1e2 File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_k1e2.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_k1e2" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|altsyncram_k1e2:altsyncram1" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf Line: 37
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf Line: 38
+Info (12130): Elaborated megafunction instantiation "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf Line: 38
+Info (12133): Instantiated megafunction "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/altsyncram_1pn1.tdf Line: 38
+    Info (12134): Parameter "CVALUE" = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "0"
+    Info (12134): Parameter "NUMWORDS" = "256"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "9"
+    Info (12134): Parameter "WIDTH_WORD" = "256"
+    Info (12134): Parameter "WIDTHAD" = "8"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "ram:memory|altsyncram:altsyncram_component|altsyncram_1pn1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:no_name_gen:info_rom_sr" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 799
+Info (12128): Elaborating entity "UnidadeOperacoesMatriz" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 42
+Info (12128): Elaborating entity "SomadorMatrizes" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|SomadorMatrizes:soma_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 20
+Info (12128): Elaborating entity "SubtratorMatrizes" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|SubtratorMatrizes:sub_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 21
+Info (12128): Elaborating entity "MultiplicadorEscalar" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorEscalar:escalar_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 22
+Info (12128): Elaborating entity "OpostaMatriz" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|OpostaMatriz:oposto_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 23
+Info (12128): Elaborating entity "TransporMatriz" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|TransporMatriz:transposta_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 24
+Info (12128): Elaborating entity "MultiplicadorMatrizes" for hierarchy "UnidadeOperacoesMatriz:unidade_operacoes|MultiplicadorMatrizes:mult_mod" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/UnidadeOperacoesMatriz.v Line: 25
+Warning (10230): Verilog HDL assignment warning at MultiplicadorMatrizes.v(62): truncated value with size 32 to match size of target (8) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MultiplicadorMatrizes.v Line: 62
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debouncer" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/MainTopLevel.v Line: 49
+Info (12128): Elaborating entity "DivisorClock" for hierarchy "debounce:debouncer|DivisorClock:divisor" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 14
+Warning (10230): Verilog HDL assignment warning at debounce.v(39): truncated value with size 32 to match size of target (27) File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 39
+Info (12128): Elaborating entity "FlipFlopEstavel" for hierarchy "debounce:debouncer|FlipFlopEstavel:ff0" File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/debounce.v Line: 17
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2025.04.09.21:41:12 Progress: Loading sldd144d38a/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd144d38a/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/workspace/uefs/Sistemas Digitais/final_attempt_without_const/db/ip/sldd144d38a/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2954 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 2640 logic cells
+    Info (21064): Implemented 256 RAM segments
+    Info (21062): Implemented 45 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 5082 megabytes
+    Info: Processing ended: Wed Apr  9 21:41:28 2025
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:15
+
+

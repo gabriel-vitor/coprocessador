@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED_0",
+					"strict" : false
+				},
+				{
+					"name" : "LED_1",
+					"strict" : false
+				},
+				{
+					"name" : "LED_2",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "botao",
+					"strict" : false
+				},
+				{
+					"name" : "operacao[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operacao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operacao[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
