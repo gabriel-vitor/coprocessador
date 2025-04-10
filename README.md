@@ -123,7 +123,6 @@ Para inserir os dados das matrizes na memória, foi utilizada a ferramenta In-Sy
 **Testes na Placa:**
 As operações foram testadas diretamente na DE1-SoC, utilizando chaves (switches), botões e LEDs para entrada e visualização dos resultados. Em versões futuras, o processador ARM (HPS) pode ser utilizado para enviar comandos diretamente ao coprocessador por meio de um barramento de controle simples.
 </p>
-## 
 
 ## Testes de Funcionamento do Sistema e Análise dos Resultados
 
