@@ -105,8 +105,11 @@ As operações testadas incluíram:
 
 - **Adição de matrizes**
 - **Subtração de matrizes**
+- **Multiplicação por escalar**
 - **Multiplicação de matrizes**
 - **Transposição de matriz**
+- **Matriz oposta**
+
 
 > **Observação importante:** A operação de **determinante** foi inicialmente planejada, mas não chegou a ser implementada na versão atual do projeto.
 
