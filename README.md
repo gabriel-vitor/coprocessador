@@ -46,12 +46,11 @@
 </p>
 
 <p align="justify">
-	 A comunicação com o mundo externo é realizada por meio dos seguintes periféricos físicos:
-	
-● Switches (SW[2:0]): responsáveis por selecionar a operação aritmética a ser executada.
-● Botão KEY[0]: usado para avanço manual da máquina de estados que controla o fluxo de execução.
-● LEDs vermelhos (LEDR[2:0]): indicam visualmente o estado atual da máquina de controle do sistema.
-● JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
+	A comunicação com o mundo externo é realizada por meio dos seguintes periféricos físicos:
+	Switches (SW[2:0]): responsáveis por selecionar a operação aritmética a ser executada.
+	Botão KEY[0]: usado para avanço manual da máquina de estados que controla o fluxo de execução.
+	LEDs vermelhos (LEDR[2:0]): indicam visualmente o estado atual da máquina de controle do sistema.
+	JTAG (via cabo USB Blaster): utilizado para programação da FPGA e comunicação com o In-System Memory Content Editor (ISMCE), que permite a leitura e escrita direta nos blocos de RAM do sistema.
 </p>
 
 <p align="center">
@@ -59,7 +58,7 @@
 </p>
 
 <p align="center">
-O projeto não requer comunicação com outros sistemas nem com o processador ARM embutido, funcionando de forma autônoma. Todas as entradas e saídas são mapeadas diretamente para os pinos físicos da FPGA, respeitando a pinagem da DE1-SoC definida no arquivo .qsf.
+	O projeto não requer comunicação com outros sistemas nem com o processador ARM embutido, funcionando de forma autônoma. Todas as entradas e saídas são mapeadas diretamente para os pinos físicos da FPGA, respeitando a pinagem da DE1-SoC definida no arquivo .qsf.
 </p>
 
 <p align="center">
@@ -69,7 +68,7 @@ O projeto não requer comunicação com outros sistemas nem com o processador AR
 </p>
 
 <p align="center">
-Além disso, o projeto implementa uma máquina de estados finitos (MEF), responsável por sequenciar as operações de leitura das matrizes da memória, execução da operação escolhida e gravação do resultado na RAM.
+	Além disso, o projeto implementa uma máquina de estados finitos (MEF), responsável por sequenciar as operações de leitura das matrizes da memória, execução da operação escolhida e gravação do resultado na RAM.
 </p>
 
 <p align="center">
