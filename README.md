@@ -95,11 +95,13 @@ Cada operação matricial é encapsulada em um módulo dedicado. A Tabela 1 apre
 
 
 ### Consumo dos Elementos Lógicos
+A imagem abaixo apresenta o resumo da utilização dos recursos da FPGA durante a implementação do projeto. É possível observar que o consumo de ALMs (Adaptive Logic Modules), registradores dedicados e recursos de roteamento está dentro dos limites. 
 <p align="center">
-    <img src="images/Consumo-LE.png" width="600"/>
+    <img src="images/Consumo-LE.jpg" width="400"/>
     <br/>
-    <b>Figura 3.</b> Estados da MEF utilizada. <b>Fonte:</b> Os autores.
-</p>
+    <b>Figura 3.</b> Relatório de uso de recursos da FPGA. <b>Fonte:</b> Quartus.
+
+
 ## Preparação do Ambiente de Desenvolvimento
 
 <p align="justify">
